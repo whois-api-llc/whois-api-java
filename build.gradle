@@ -1,0 +1,64 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group 'com.whoisxmlapi.whoisapi'
+version '1.0.3'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+}
+
+test {
+    environment "API_KEY", System.getenv("API_KEY")
+    useJUnitPlatform()
+}
+
+task heavyJar(type: Jar) {
+    archiveClassifier = 'all'
+    from {configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it)} }
+    with jar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'api-client'
+            groupId = 'com.whoisxmlapi.whoisapi'
+            version = '1.0.3'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'WhoisXML API client'
+                description = 'API client for WhoisXML API service'
+                url = 'https://whois.whoisxmlapi.com/'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+            }
+        }
+    }
+}
