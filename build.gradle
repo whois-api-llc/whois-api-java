@@ -6,8 +6,8 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-group 'com.whoisxmlapi.whoisapi'
-version '1.0.3'
+group 'com.whoisxmlapi'
+version '1.0.4'
 
 repositories {
     mavenCentral()
@@ -28,7 +28,7 @@ test {
 }
 
 task heavyJar(type: Jar) {
-    archiveClassifier = 'all'
+    classifier = 'all'
     from {configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it)} }
     with jar
 }
@@ -36,18 +36,10 @@ task heavyJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = 'api-client'
-            groupId = 'com.whoisxmlapi.whoisapi'
-            version = '1.0.3'
+            artifactId = 'whois-api-client'
+            groupId = 'com.whoisxmlapi'
+            version = '1.0.4'
             from components.java
-            versionMapping {
-                usage('java-api') {
-                    fromResolutionOf('runtimeClasspath')
-                }
-                usage('java-runtime') {
-                    fromResolutionResult()
-                }
-            }
             pom {
                 name = 'WhoisXML API client'
                 description = 'API client for WhoisXML API service'

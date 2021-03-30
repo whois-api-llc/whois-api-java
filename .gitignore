@@ -2,5 +2,5 @@
 .gradle/*
 gradlew*
 **/build/
-!gradle-wrapper.jar
 **/*.jar
+!gradle/wrapper/gradle-wrapper.jar

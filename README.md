@@ -6,7 +6,40 @@ The java library for the [Whois XML API service](https://whois.whoisxmlapi.com/)
 * WhoisXMLAPI account and the API key. The API key could be obtained [here](https://user.whoisxmlapi.com/products).
 
 ## Installation
-Jar files are available in the latest release.
+
+### Gradle
+```groovy
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+```
+```groovy
+    dependencies {
+        implementation 'com.whoisxmlapi:whois-api-java:v1.0.4'
+    }
+```
+
+### Maven
+
+```xml
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+```
+```xml
+	<dependency>
+	    <groupId>com.whoisxmlapi</groupId>
+	    <artifactId>whois-api-java</artifactId>
+	    <version>v1.0.4</version>
+	</dependency>
+```
+### Jar files
+Jar files are available on the release page.
+
 
 ## Usage
 API documentation available [here](https://whois.whoisxmlapi.com/documentation/making-requests).
