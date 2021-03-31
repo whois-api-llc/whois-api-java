@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![](https://jitpack.io/v/com.whoisxmlapi/whois-api-java.svg)](https://jitpack.io/#com.whoisxmlapi/whois-api-java)
+
 # Whois XML API client library
 The java library for the [Whois XML API service](https://whois.whoisxmlapi.com/).
 
