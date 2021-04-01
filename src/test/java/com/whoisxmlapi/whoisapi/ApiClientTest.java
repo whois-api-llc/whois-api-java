@@ -103,7 +103,7 @@ class ApiClientTest {
     void testGetRawResponse3() throws Exception {
         ApiClient client = new ApiClient(System.getenv("API_KEY"));
         String[] records = client.getRawResponse(new String[]{"whoisxmlapi.com", "google.com"},
-                new RequestParameters(System.getenv("API_KEY").replace("0", "1")));
+                new RequestParameters(System.getenv("API_KEY") + "CLEARLY_WRONG_API_KEY"));
         assertTrue(records[0].contains("ErrorMessage"));
     }
 
