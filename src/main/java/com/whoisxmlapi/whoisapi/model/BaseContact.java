@@ -11,7 +11,7 @@ public abstract class BaseContact {
     protected String street2;
     protected String city;
     protected String state;
-    protected Integer postalCode;
+    protected String postalCode;
     protected String country;
     protected String email;
     protected String telephone;
@@ -41,8 +41,8 @@ public abstract class BaseContact {
         return OptionalBuilder.buildOptionalString(this.state);
     }
 
-    public Optional<Integer> getPostCode() {
-        return OptionalBuilder.buildOptionalInt(this.postalCode);
+    public Optional<String> getPostCode() {
+        return OptionalBuilder.buildOptionalString(this.postalCode);
     }
 
     public Optional<String> getCountry() {
