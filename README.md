@@ -18,7 +18,7 @@ The java library for the [Whois XML API service](https://whois.whoisxmlapi.com/)
 ```
 ```groovy
     dependencies {
-        implementation 'com.whoisxmlapi:whois-api-java:v1.1.0'
+        implementation 'com.whoisxmlapi:whois-api-java:v1.1.1'
     }
 ```
 
@@ -36,7 +36,7 @@ The java library for the [Whois XML API service](https://whois.whoisxmlapi.com/)
 	<dependency>
 	    <groupId>com.whoisxmlapi</groupId>
 	    <artifactId>whois-api-java</artifactId>
-	    <version>v1.1.0</version>
+	    <version>v1.1.1</version>
 	</dependency>
 ```
 ### Jar files
